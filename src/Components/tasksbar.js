@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Card from "./card";
+import Taskcard from "./card";
 import axios from "axios";
 
 export default class Tasksbar extends Component {
@@ -20,7 +20,7 @@ export default class Tasksbar extends Component {
           {this.state.exisitingTasks &&
             this.state.exisitingTasks.map((ele) => (
               // <div>{console.log(ele._id)}</div>
-              <Card key={ele._id} data={ele} />
+              <Taskcard key={ele._id} data={ele} />
             ))}
         </div>
       </Fragment>

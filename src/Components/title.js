@@ -4,7 +4,7 @@ export default class Title extends Component{
     render(){
         return(
             <Fragment>
-                <h1>hey yo</h1>
+                <h1>TASKER</h1>
             </Fragment>
         )
     }
