@@ -6,10 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import deletereducer from "./reducers/deleteReducer"
+import {loadState,saveState} from "./localstorage"
 
-const astore= createStore(deletereducer)
+const persistedState=loadState()
+const astore= createStore(deletereducer,persistedState)
 
-
+astore.subscribe(()=>{
+  // saveState(astore.getState)
+  saveState({
+    existingTasks:astore.getState().existingTasks
+  })
+})
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={astore}>
