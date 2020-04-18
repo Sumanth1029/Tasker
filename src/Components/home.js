@@ -9,12 +9,14 @@ export default class Home extends Component {
   render() {
     return (
       <Fragment>
-        <div className="container">
+        <div className="container1">
           <Title />
           <Tasksbar />
+          <div className="push_right">
           <Fab color="primary" aria-label="add">
             <AddIcon />
           </Fab>
+          </div>
         </div>
       </Fragment>
     );

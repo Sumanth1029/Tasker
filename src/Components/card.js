@@ -9,9 +9,28 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import axios from "axios"
+import { Redirect } from 'react-router-dom'
+import {connect} from 'react-redux'
 
-export default class Taskcard extends Component {
-  render() {
+
+// import Button from '@material-ui/core/Button';
+
+ class Taskcard extends Component {
+  
+  
+  
+    handleDelete=(taskTitle)=>{
+        this.props.deleteTask(taskTitle)
+    }
+  
+  
+  
+   render() {
+
+
+    
     return (
       <Fragment>
         {/* <div className="card" key={this.props.data._id}>
@@ -44,9 +63,12 @@ export default class Taskcard extends Component {
               </Typography>
             </CardContent>
           </CardActionArea >
-          <CardActions className="card-footer">
-            <DeleteIcon></DeleteIcon>
-            <EditIcon></EditIcon>
+          <CardActions >
+            
+
+          <IconButton aria-label="delete" onClick={()=>{this.handleDelete(this.props.data.taskTitle)}}>
+        <DeleteIcon />
+      </IconButton>
             
           </CardActions>
         </Card>
@@ -54,6 +76,18 @@ export default class Taskcard extends Component {
     );
   }
 }
+
+
+
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        deleteTask:(taskTitle)=>{
+            dispatch({type:'DELTE_TASK',taskTitle:taskTitle})}
+    }
+}
+export default connect(mapDispatchToProps)(Taskcard)
+
+
 
 // import React from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
