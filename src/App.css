@@ -43,6 +43,33 @@
   margin-right: 50px;
 
 }
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	/* background-color:rgb(60, 94, 156); */
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.btn-circle.btn-xl { 
+  width: 60px; 
+            height: 60px; 
+            padding: 7px 10px; 
+            border-radius: 30px; 
+            font-size: 10px; 
+            text-align: center; 
+} 
+
+.my-float{
+  margin-top:9px;
+  margin-left: 1px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

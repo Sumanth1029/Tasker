@@ -13,13 +13,10 @@ export default class Home extends Component {
         <div className="container1">
           <Title />
           <Tasksbar />
-          <div className="push_right">
-            <div className="btn btn-success" onClick={(e)=>{this.setState({visible:true})}}>Add</div>
-            {console.log(this.state.visible)}
+         
+            <div className="btn btn-success float btn-circle btn-xl">
+            <i className="fa fa-3x fa-plus my-float"></i></div>
           </div>
-          
-          
-        </div>
       </Fragment>
     );
   }
