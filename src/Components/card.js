@@ -1,77 +1,114 @@
-import React, { Component, Fragment, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-
+import React, { Component, Fragment } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+import IconButton from "@material-ui/core/IconButton";
 import { connect } from "react-redux";
 import { deleteTasks } from "../actions/delete";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 
 class Taskcard extends Component {
   handleDelete = (taskTitle) => {
-    console.log("sdfs",taskTitle);
     this.props.deleteTask(taskTitle);
   };
-  Example = (title) => {
-    const [show, setShow] = useState(false);
-    // console.log("title:", title);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+  AlertDialog = (title) => {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose3 = () => {
+      setOpen(false);
+    };
 
     const handleClose2 = () => {
       this.handleDelete(title.title);
-      setShow(false);
+      setOpen(false);
     };
 
     return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose2}>
-              Close
+      <div>
+        <IconButton aria-label="delete" onClick={handleClickOpen}>
+          <DeleteIcon />
+        </IconButton>
+        <Dialog
+          open={open}
+          onClose={handleClose3}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Are you sure you want to delete "+title.title+" ?"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Tasks once deleted cannot be recovered
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose2} color="primary">
+              Delete
+              
             </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
+            <Button onClick={handleClose3} color="primary" autoFocus>
+              Cancel
             </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
+          </DialogActions>
+        </Dialog>
+      </div>
     );
   };
 
+
+  
+
+
+
+   
   render() {
     return (
       <Fragment>
-        <div className="card ">
-          <div className="card-title"></div>
-          {this.props.data.taskTitle}
-          <div className="card-body">
-            {" "}
-            {this.props.data.taskDesc &&
-              this.props.data.taskDesc.map((item) => (
-                <ol key={item}>{item}</ol>
-              ))}
-          </div>
-
-          <div className="card-footer">
-            <button
-              className="btn btn-primary"
-              aria-label="delete"
-              onClick={() => {
-                this.handleDelete(this.props.data.taskTitle);
-              }}
-              type="button"
-            >
-              Delete
-            </button>
-          </div>
-        </div>
-        <this.Example title={this.props.data.taskTitle}></this.Example>
+        <Card className="root">
+          <CardActionArea>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h2"
+                className="text-center"
+              >
+                {this.props.data.taskTitle}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {this.props.data.taskDesc &&
+                  this.props.data.taskDesc.map((item) => (
+                    <ol key={item}>{item}</ol>
+                  ))}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <this.AlertDialog
+              title={this.props.data.taskTitle}
+            ></this.AlertDialog>
+          </CardActions>
+        </Card>
+      
       </Fragment>
     );
   }

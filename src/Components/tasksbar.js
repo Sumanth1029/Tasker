@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 class Tasksbar extends Component {
   render() {
     const tasks = this.props;
-    // console.log(tasks.existingTasks);
+    console.log(tasks.existingTasks);
     return (
       <Fragment>
         <div className="container1">
-          <div className="card-deck">
+          <div className="row">
             {tasks.existingTasks &&
               tasks.existingTasks.map((ele) => (
                 // <div>{console.log(ele._id)}</div>
