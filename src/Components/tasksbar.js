@@ -10,7 +10,7 @@ class Tasksbar extends Component {
     return (
       <Fragment>
         <div className="container1">
-          <div className="row">
+          <div className="card-deck">
             {tasks.existingTasks &&
               tasks.existingTasks.map((ele) => (
                 // <div>{console.log(ele._id)}</div>
