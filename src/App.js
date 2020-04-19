@@ -3,7 +3,7 @@ import "./App.css";
 import React, { Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import Home from "./Components/home.js"
+import Demo from "./Components/home.js"
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +20,7 @@ function App() {
           
           <div>
             <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Demo} />
             </Switch>
           </div>
         </Fragment>

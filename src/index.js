@@ -8,8 +8,10 @@ import {Provider} from 'react-redux'
 import deletereducer from "./reducers/deleteReducer"
 import {loadState,saveState} from "./localstorage"
 
-const persistedState=loadState()
-const astore= createStore(deletereducer,persistedState)
+// const persistedState=loadState()
+// const astore= createStore(deletereducer,persistedState)
+const astore= createStore(deletereducer)
+
 
 astore.subscribe(()=>{
   // saveState(astore.getState)
