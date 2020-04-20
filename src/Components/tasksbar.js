@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import Taskcard from "./card";
-import axios from "axios";
 import { connect } from "react-redux";
 
 class Tasksbar extends Component {
@@ -9,8 +8,8 @@ class Tasksbar extends Component {
     console.log(tasks.existingTasks);
     return (
       <Fragment>
-        <div className="container1">
-          <div className="row">
+        <div className="container2">
+          <div className="row container3">
             {tasks.existingTasks &&
               tasks.existingTasks.map((ele) => (
                 // <div>{console.log(ele._id)}</div>

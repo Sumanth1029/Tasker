@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from "react";
 import Tasksbar from "./tasksbar";
 import Title from "./title";
-import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-
-export default class Home extends Component {
+import {connect} from 'react-redux'
+import {addTaskAction} from "../actions/add"
+import {new_tasks} from "../classes/taskobj"
+ class Home extends Component {
+  addTask=(taskObj)=>{
+    this.props.addTasks(taskObj)
+  }
   render() {
     return (
       <Fragment>
@@ -13,7 +17,7 @@ export default class Home extends Component {
           <Title />
           <Tasksbar />
           <div className="float">
-          <Fab color="primary" aria-label="add">
+          <Fab color="primary" aria-label="add" onClick={()=>{this.addTask(new_tasks)}}>
             <AddIcon />
           </Fab>
           </div>
@@ -22,3 +26,12 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTasks: (taskObj) => {
+      dispatch(addTaskAction(taskObj));
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(Home);

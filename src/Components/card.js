@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -83,7 +81,7 @@ class Taskcard extends Component {
   render() {
     return (
       <Fragment>
-        <Card className="root">
+        <Card className="root ">
           <CardActionArea>
             <CardContent>
               <Typography
@@ -95,10 +93,13 @@ class Taskcard extends Component {
                 {this.props.data.taskTitle}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
+                <ul>
                 {this.props.data.taskDesc &&
                   this.props.data.taskDesc.map((item) => (
-                    <ol key={item}>{item}</ol>
-                  ))}
+                    
+                     <li> {item}</li>
+                      
+                  ))}</ul>
               </Typography>
             </CardContent>
           </CardActionArea>

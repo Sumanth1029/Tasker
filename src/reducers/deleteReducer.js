@@ -6,10 +6,10 @@ const initState = {
       taskDesc: [
         "Bring milk",
         "bring oi8l",
-        "bring oil",
-        "bring oil",
-        "bring oil",
-        "bring oil",
+        "bring efoil",
+        "bring feoil",
+        "bring efefoil",
+        "bring esfsoil",
       ],
     },
     {
@@ -27,6 +27,20 @@ const initState = {
       taskTitle: "task4",
       taskDesc: ["Bring milk ffdfcs fesr ewfsdf wesfr "],
     },
+    {
+      taskType: "notes",
+      taskTitle: "task5",
+      taskDesc: ["Bring milk ffdfcs fesr ewfsdf wesfr "],
+    },{
+      taskType: "notes",
+      taskTitle: "task6",
+      taskDesc: ["Bring milk ffdfcs fesr ewfsdf wesfr "],
+    },
+    {
+      taskType: "notes",
+      taskTitle: "task7",
+      taskDesc: ["Bring milk ffdfcs fesr ewfsdf wesfr "],
+    }
   ],
 };
 
@@ -42,6 +56,15 @@ const deletereducer = (state = initState, action) => {
             existingTasks:newTasks
         }
     }
+
+    if(action.type==="ADD_TASK"){
+      return {
+        ...state,
+        existingTasks:[...state. existingTasks,action.content]
+    }
+    }
+
+
     return state
 };
 
