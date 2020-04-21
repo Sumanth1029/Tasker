@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d19b938d6dacafce785340bb2548d21",
+    "revision": "361de041c38ac290605303bb1579ae3d",
     "url": "/Sumanth1029/Tasker_React/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sumanth1029/Tasker_React/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "bce6cfbffd196491a904",
+    "revision": "5342c040d550a338f8c4",
     "url": "/Sumanth1029/Tasker_React/static/css/main.54684971.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sumanth1029/Tasker_React/static/js/2.be13ecdd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bce6cfbffd196491a904",
-    "url": "/Sumanth1029/Tasker_React/static/js/main.8b9fe9a3.chunk.js"
+    "revision": "5342c040d550a338f8c4",
+    "url": "/Sumanth1029/Tasker_React/static/js/main.c149516e.chunk.js"
   },
   {
     "revision": "bb9cc8b7c6e5f34c4802",

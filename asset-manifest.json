@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Sumanth1029/Tasker_React/static/css/main.54684971.chunk.css",
-    "main.js": "/Sumanth1029/Tasker_React/static/js/main.8b9fe9a3.chunk.js",
-    "main.js.map": "/Sumanth1029/Tasker_React/static/js/main.8b9fe9a3.chunk.js.map",
+    "main.js": "/Sumanth1029/Tasker_React/static/js/main.c149516e.chunk.js",
+    "main.js.map": "/Sumanth1029/Tasker_React/static/js/main.c149516e.chunk.js.map",
     "runtime-main.js": "/Sumanth1029/Tasker_React/static/js/runtime-main.02e7c54d.js",
     "runtime-main.js.map": "/Sumanth1029/Tasker_React/static/js/runtime-main.02e7c54d.js.map",
     "static/css/2.69121389.chunk.css": "/Sumanth1029/Tasker_React/static/css/2.69121389.chunk.css",
     "static/js/2.be13ecdd.chunk.js": "/Sumanth1029/Tasker_React/static/js/2.be13ecdd.chunk.js",
     "static/js/2.be13ecdd.chunk.js.map": "/Sumanth1029/Tasker_React/static/js/2.be13ecdd.chunk.js.map",
     "index.html": "/Sumanth1029/Tasker_React/index.html",
-    "precache-manifest.282ac3d48bd917314f9671364a2f86f6.js": "/Sumanth1029/Tasker_React/precache-manifest.282ac3d48bd917314f9671364a2f86f6.js",
+    "precache-manifest.483851300611ee6177b09fadcfedd501.js": "/Sumanth1029/Tasker_React/precache-manifest.483851300611ee6177b09fadcfedd501.js",
     "service-worker.js": "/Sumanth1029/Tasker_React/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/Sumanth1029/Tasker_React/static/css/2.69121389.chunk.css.map",
     "static/css/main.54684971.chunk.css.map": "/Sumanth1029/Tasker_React/static/css/main.54684971.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.69121389.chunk.css",
     "static/js/2.be13ecdd.chunk.js",
     "static/css/main.54684971.chunk.css",
-    "static/js/main.8b9fe9a3.chunk.js"
+    "static/js/main.c149516e.chunk.js"
   ]
 }
