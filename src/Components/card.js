@@ -81,7 +81,7 @@ class Taskcard extends Component {
   render() {
     return (
       <Fragment>
-        <Card className="root ">
+        <Card className="root  ">
           <CardActionArea>
             <CardContent>
               <Typography
