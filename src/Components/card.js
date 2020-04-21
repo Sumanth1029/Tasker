@@ -94,12 +94,7 @@ class Taskcard extends Component {
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 <ul>
-                {this.props.data.taskDesc &&
-                  this.props.data.taskDesc.map((item) => (
-                    
-                     <li> {item}</li>
-                      
-                  ))}</ul>
+                {this.props.data.taskDesc }</ul>
               </Typography>
             </CardContent>
           </CardActionArea>

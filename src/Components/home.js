@@ -16,6 +16,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+var new_title, new_desc;
+
 class Home extends Component {
   FormDialog = () => {
     const [open, setOpen] = React.useState(false);
@@ -28,34 +30,36 @@ class Home extends Component {
       setOpen(false);
     };
 
-    const handleClose2=()=>{
-      
-        this.addTask(new_tasks);
-        handleClose()
-     
-    }
+    const handleClose2 = () => {
+      new_title = document.getElementById("title").value;
+      new_desc = document.getElementById("details").value;
+
+      var nt = new new_tasks(new_title, new_desc);
+
+      this.addTask(nt);
+      handleClose();
+    };
 
     return (
       <div>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-          Open form dialog
-        </Button>
+        <div className="float">
+          <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+            <AddIcon />
+          </Fab>
+        </div>
         <Dialog
           open={open}
           onClose={handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle
-            id="form-dialog-title"
-            
-          >
+          <DialogTitle id="form-dialog-title">
             Enter Task title and details
           </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              To subscribe to this website, please enter your email address
-              here. We will send updates occasionally.
+              Enter task you want to perform. Make sure all the task titles are unique
             </DialogContentText>
+
             <TextField
               autoFocus
               margin="dense"
@@ -65,7 +69,7 @@ class Home extends Component {
               fullWidth
             />
 
-<TextField
+            <TextField
               autoFocus
               margin="dense"
               id="details"
@@ -79,7 +83,7 @@ class Home extends Component {
               Cancel
             </Button>
             <Button onClick={handleClose2} color="primary">
-              Subscribe
+              Save
             </Button>
           </DialogActions>
         </Dialog>
@@ -96,17 +100,6 @@ class Home extends Component {
         <div className="container1">
           <Title />
           <Tasksbar />
-          <div className="float">
-            <Fab
-              color="primary"
-              aria-label="add"
-              onClick={() => {
-                this.addTask(new_tasks);
-              }}
-            >
-              <AddIcon />
-            </Fab>
-          </div>
         </div>
         <this.FormDialog></this.FormDialog>
       </Fragment>
