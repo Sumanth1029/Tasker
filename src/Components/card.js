@@ -15,8 +15,8 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
+import Snackbar from "@material-ui/core/Snackbar";
+import CloseIcon from "@material-ui/icons/Close";
 
 class Taskcard extends Component {
   handleDelete = (taskTitle) => {
@@ -51,7 +51,7 @@ class Taskcard extends Component {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Are you sure you want to delete "+title.title+" ?"}
+            {"Are you sure you want to delete " + title.title + " ?"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
@@ -61,7 +61,6 @@ class Taskcard extends Component {
           <DialogActions>
             <Button onClick={handleClose2} color="primary">
               Delete
-              
             </Button>
             <Button onClick={handleClose3} color="primary" autoFocus>
               Cancel
@@ -72,12 +71,6 @@ class Taskcard extends Component {
     );
   };
 
-
-  
-
-
-
-   
   render() {
     return (
       <Fragment>
@@ -93,8 +86,7 @@ class Taskcard extends Component {
                 {this.props.data.taskTitle}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                <ul>
-                {this.props.data.taskDesc }</ul>
+                <ul>{this.props.data.taskDesc}</ul>
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -104,7 +96,6 @@ class Taskcard extends Component {
             ></this.AlertDialog>
           </CardActions>
         </Card>
-      
       </Fragment>
     );
   }

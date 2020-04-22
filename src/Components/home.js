@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import { addTaskAction } from "../actions/add";
 import { new_tasks } from "../classes/taskobj";
 
-// import React from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -57,7 +56,8 @@ class Home extends Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Enter task you want to perform. Make sure all the task titles are unique
+              Enter task you want to perform. Make sure all the task titles are
+              unique
             </DialogContentText>
 
             <TextField

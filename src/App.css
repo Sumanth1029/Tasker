@@ -36,7 +36,6 @@
 
 .push_right{
   margin-left:95%;
-  /* position: fixed; */
   margin-bottom: 5%;
 }
 .container1{
@@ -45,8 +44,6 @@
   margin-top: 10px;
   background-color: black;
 
-  /* margin: 2px solid black; */
-  /* background-color: gray; */
 }
 
 .color1{
@@ -65,8 +62,7 @@
   margin-right: 100px;
   margin-top: 30px;
   background-color: black;
-  /* margin: 2px solid black; */
-  /* background-color: green; */
+ 
 }
 
 .container3{
@@ -75,8 +71,7 @@
   background-color: black;
 
   margin-top: 10px;
-  /* margin: 2px solid black; */
-  /* background-color: rgb(156, 130, 143); */
+  
 }
 @keyframes App-logo-spin {
   from {
