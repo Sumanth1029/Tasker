@@ -19,11 +19,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
 
 class Taskcard extends Component {
-  handleDelete = (taskTitle) => {
-    this.props.deleteTask(taskTitle);
+  handleDelete = (id) => {
+    this.props.deleteTask(id);
   };
 
-  AlertDialog = (title) => {
+  AlertDialog = (data) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -35,12 +35,13 @@ class Taskcard extends Component {
     };
 
     const handleClose2 = () => {
-      this.handleDelete(title.title);
+      this.handleDelete(data.data.id);
       setOpen(false);
     };
 
     return (
       <div>
+        
         <IconButton aria-label="delete" onClick={handleClickOpen}>
           <DeleteIcon />
         </IconButton>
@@ -51,7 +52,7 @@ class Taskcard extends Component {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Are you sure you want to delete " + title.title + " ?"}
+            {"Are you sure you want to delete " + data.data.taskTitle + " ?"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
@@ -92,7 +93,7 @@ class Taskcard extends Component {
           </CardActionArea>
           <CardActions>
             <this.AlertDialog
-              title={this.props.data.taskTitle}
+              data={this.props.data}
             ></this.AlertDialog>
           </CardActions>
         </Card>
@@ -103,8 +104,8 @@ class Taskcard extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteTask: (taskTitle) => {
-      dispatch(deleteTasks(taskTitle));
+    deleteTask: (id) => {
+      dispatch(deleteTasks(id));
     },
   };
 };

@@ -1,6 +1,6 @@
-export const deleteTasks=(taskTitle)=>{
+export const deleteTasks=(id)=>{
     return{
         type:"DELETE_TASK",
-        taskTitle
+        id
     }
 }

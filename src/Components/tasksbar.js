@@ -5,15 +5,19 @@ import { connect } from "react-redux";
 class Tasksbar extends Component {
   render() {
     const tasks = this.props;
-    console.log(tasks.existingTasks);
+    // console.log(tasks.existingTasks);
     return (
       <Fragment>
         <div className="container2">
-          <div className="row container3">
-            {tasks.existingTasks &&
+          <div className="row container3 text-center">
+            {/* {tasks.existingTasks &&
               tasks.existingTasks.map((ele) => (
-                <Taskcard key={ele._id} data={ele} />
-              ))}
+                <Taskcard key={ele.id} data={ele} />
+              ))} */}
+
+              {tasks.existingTasks.length>0 ? tasks.existingTasks.map((ele) => (
+                <Taskcard key={ele.id} data={ele} />
+              )):<div className="text-center" style={{color:"white"}}>No existing tasks. Press add to create new</div>}
           </div>
         </div>
       </Fragment>

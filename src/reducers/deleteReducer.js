@@ -48,7 +48,7 @@ const deletereducer = (state = initState, action) => {
     
     if(action.type==='DELETE_TASK'){
         let newTasks=state.existingTasks.filter(task=>{
-            return action.taskTitle!== task.taskTitle
+            return action.id!== task.id
         })
 
         return{

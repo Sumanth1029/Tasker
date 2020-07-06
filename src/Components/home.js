@@ -14,6 +14,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import {v4 as uuid} from 'uuid'
 
 var new_title, new_desc;
 
@@ -33,7 +34,7 @@ class Home extends Component {
       new_title = document.getElementById("title").value;
       new_desc = document.getElementById("details").value;
 
-      var nt = new new_tasks(new_title, new_desc);
+      var nt = new new_tasks(uuid(),new_title, new_desc);
 
       this.addTask(nt);
       handleClose();
@@ -42,7 +43,7 @@ class Home extends Component {
     return (
       <div>
         <div className="float">
-          <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+          <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
             <AddIcon />
           </Fab>
         </div>
@@ -56,8 +57,8 @@ class Home extends Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Enter task you want to perform. Make sure all the task titles are
-              unique
+              Enter task you want to perform.
+              
             </DialogContentText>
 
             <TextField
